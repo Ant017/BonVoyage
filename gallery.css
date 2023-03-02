@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+	padding:10px;
+	background-image: linear-gradient(#95c25b,#38cbcd);
+}
+
+header
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 30px 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 10000;
+}
+header .logo
+{
+	margin-top: 0px;
+	margin-left: 0px;
+}
+
+.wrapper{
+	
+	margin: 40px auto;
+	max-width: 1100px;
+}
+
+.wrapper .heading{
+	position: relative;
+	text-align: center;
+	color: #000;
+	font-family: 'Kaushan Script', cursive;
+	white-space: normal;
+	font-size: 8vw;
+	z-index: 100;
+	font-weight: bold;
+	margin-bottom: 60px;
+	z-index: 1000;	
+}
+
+.wrapper nav{
+	
+	display: flex;
+	justify-content: center;
+}
+
+nav .items{
+	
+	display: flex;
+	max-width: 1000px;
+	width: 100%;
+	padding-right: 5px;
+	justify-content: space-between;
+}
+
+nav .items .item{
+	padding: 15px 30px;
+	font-size: 18px;
+	font-weight: 500;
+	color: #000;
+	border: 3px solid #000;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+nav .items .active,
+nav .items .item:hover{
+	color: #fff;
+	background: #000;
+}
+
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 50px;
+	margin-left: 0px;
+}
+
+.gallery .image{
+	padding: 7px;
+	padding-bottom: 60px;
+	width: calc(120% / 4);
+	background: #f8ffee;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+	margin-left: 30px;
+	margin-bottom: 30px;
+}
+
+.gallery .text{
+	text-align: center;
+	margin-top: 30px;
+	font-family: 'Lato', sans-serif;
+	font-size: 21px;
+}
+
+.gallery .image.show{
+	animation: animate 0.4s ease;
+}
+
+@keyframes animate{
+	0%{
+		transform: scale(0.5);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+
+.gallery .image.hide{
+	display: none;
+}
+
+.gallery .image span{
+	display: flex;
+	width: 100%;
+	overflow: hidden;
+	background: white;
+}
+
+.gallery .image img{
+	width: 100%;
+	vertical-align: middle;
+	transition: all 0.2 ease;
+}
+
+.gallery .image:hover img{
+	transform: scale(1.1);
+}
+
+.preview-box{
+	position: fixed;
+	top: 50%;
+	left:50%;
+	transform: translate(-50%, -50%) scale(0.9);
+	background: white;
+	max-width: 700px;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+	border-radius: 10px;
+	padding: 0 5px 5px 5px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+	z-index: 29999;
+}
+
+.preview-box .details{
+	display: flex;
+	align-items: center;
+	padding: 13px 15px 13px 10px;
+	justify-content: space-between;
+}
+
+.preview-box .details .title{
+	display: flex;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.details .title p{
+	margin-left: 5px;
+	font-weight: 500;
+}
+
+.details .icon{
+	color: #007bff;
+	font-size: 22px;
+	cursor: pointer;
+}
+
+.preview-box .image-box{
+	display: flex;
+	width: 100%;
+}
+
+.preview-box.show{
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.image-box img{
+	width: 100%;
+	border-radius: 0 0 3px 3px;
+}
+
+.shadow{
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.4);
+	z-index: 2;
+}
+
+.shadow.shhow{
+	display: block;
+}
